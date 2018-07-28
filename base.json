@@ -1,0 +1,13 @@
+{
+  "sensors": [
+    "temperature",
+    "humidity",
+    "air-pressure",
+    "angle-x",
+    "angle-y",
+    "angle-z",
+    "accel-x",
+    "accel-y",
+    "accel-z"
+  ]
+}
