@@ -1,5 +1,5 @@
 {
-  "name": "point-sdk",
+  "name": "point-device-sdk",
   "version": "1.0.0",
   "description": "The Device SDK for point",
   "main": "index.js",
