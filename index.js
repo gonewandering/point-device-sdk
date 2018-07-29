@@ -8,4 +8,4 @@ exports.mid = mid
 exports.status = status
 exports.command = command
 exports.config = config
-exports.log = log
+exports.log = new Log()
