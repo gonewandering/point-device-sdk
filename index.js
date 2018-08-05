@@ -8,6 +8,6 @@ const mid = require('./lib/mid')()
 exports.mid = mid
 exports.status = new Status()
 exports.command = new Command()
-exports.Stream = Stream
-// exports.config = new Config()
 exports.log = new Log()
+
+exports.Stream = Stream
