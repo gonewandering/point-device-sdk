@@ -9,5 +9,6 @@ exports.mid = mid
 exports.status = new Status()
 exports.command = new Command()
 exports.log = new Log()
+exports.config = new Config()
 
 exports.Stream = Stream
