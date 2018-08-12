@@ -4,6 +4,7 @@ const Command = require('./lib/command')
 const Config = require('./lib/config')
 const Log = require('./lib/log')
 const mid = require('./lib/mid')()
+const network = require('./lib/network')
 
 exports.mid = mid
 exports.status = new Status()
