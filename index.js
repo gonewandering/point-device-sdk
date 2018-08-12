@@ -11,5 +11,5 @@ exports.status = new Status()
 exports.command = new Command()
 exports.log = new Log()
 exports.config = new Config()
-
+exports.network = network
 exports.Stream = Stream
