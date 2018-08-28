@@ -15,9 +15,6 @@ const delay = requirE('./hlp/delay')
 
 class Device {
   constructor(opts) {
-    if (!opts.schemes) { return throw 'No schemes declared' }
-    if (!opts.sensor) { return throw 'No sensors declared' }
-
     this.mid = mid
     this.network = network
     this.leds = leds
