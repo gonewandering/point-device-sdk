@@ -36,6 +36,8 @@ class Device {
     let self = this
     this.actions.on()
 
+    console.log(`Device ON: ${ mid }`)
+
     this.command.on('*', (cmd, data) => {
       self.actions[cmd] && self.actions[cmd].bind(self)(data)
     })
