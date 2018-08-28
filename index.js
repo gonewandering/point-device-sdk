@@ -11,7 +11,7 @@ const mid = require('./lib/mid')()
 const network = require('./lib/network')
 
 const exec = require('./hlp/exec')
-const delay = requirE('./hlp/delay')
+const delay = require('./hlp/delay')
 
 class Device {
   constructor(opts) {
