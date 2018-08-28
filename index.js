@@ -19,6 +19,8 @@ class Device {
     this.network = network
     this.leds = leds
     this.schemes = opts.schemes || {}
+    this.exec = exec
+    this.delay = delay
 
     this.sensor = new opts.sensor()
     this.config = new Config()
@@ -42,7 +44,5 @@ class Device {
 
 Device.Sensor = Sensor
 Device.Stream = Stream
-Device.exec = exec
-Device.delay = delay
 
 module.exports = Device
