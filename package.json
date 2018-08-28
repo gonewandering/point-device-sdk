@@ -1,6 +1,6 @@
 {
   "name": "point-device-sdk",
-  "version": "0.6.3",
+  "version": "0.6.4",
   "description": "The Device SDK for point",
   "main": "index.js",
   "scripts": {
