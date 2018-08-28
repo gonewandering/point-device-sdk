@@ -8,13 +8,15 @@ const network = require('./lib/network')
 const Stream = require('./lib/stream')
 
 class Device {
-  constructor() {
+  constructor(opts) {
+    opts = opts || {}
+
     this.mid = mid
     this.network = network
     this.Stream = Stream
 
     this.config = new Config()
-    this.command = new Command()
+    this.command = new Command(opts.actions || {}, this)
     this.status = new Status()
     this.log = new Log()
   }
