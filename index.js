@@ -13,38 +13,40 @@ const network = require('./lib/network')
 const exec = require('./hlp/exec')
 const delay = require('./hlp/delay')
 
+/**
+Device Class
+
+Allows for the creation of a "sofware" device running point. Assumes the rasp pi + sensor hat base hardware for development
+**/
+
 class Device {
   constructor(opts) {
+    opts = opts || {}
+
     this.mid = mid
     this.network = network
     this.leds = leds
-    this.schemes = opts.schemes || {}
     this.exec = exec
     this.delay = delay
 
-    this.sensor = new opts.sensor()
+    this.schemes = opts.schemes || {}
+    this.sensor = opts.sensor && new opts.sensor()
+
     this.config = new Config()
     this.command = new Command()
     this.status = new Status()
     this.log = new Log()
 
     this.actions = new Actions(this)
-    this.init.bind(this)()
-  }
-
-  init() {
-    let self = this
-    this.actions.on()
-
-    console.log(`Device ON: ${ mid }`)
-
-    this.command.on('*', (cmd, data) => {
-      self.actions[cmd] && self.actions[cmd].bind(self)(data)
-    })
   }
 }
 
+Device.mid = mid
 Device.Sensor = Sensor
 Device.Stream = Stream
+Device.command = new Command()
+Device.status = new Status()
+Device.exec = exec
+Device.delay = delay
 
 module.exports = Device

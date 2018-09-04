@@ -1,4 +1,4 @@
-var Device = require('../../index')
+var Device = require('../../../index')
 
 class TestSensor extends Device.Sensor {
   async get() {
