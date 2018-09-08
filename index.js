@@ -13,12 +13,6 @@ const network = require('./lib/network')
 const exec = require('./hlp/exec')
 const delay = require('./hlp/delay')
 
-/**
-Device Class
-
-Allows for the creation of a "sofware" device running point. Assumes the rasp pi + sensor hat base hardware for development
-**/
-
 class Device {
   constructor(opts) {
     opts = opts || {}
