@@ -27,11 +27,21 @@ class Device {
     this.sensor = opts.sensor && new opts.sensor()
 
     this.config = new Config()
+
     this.command = new Command()
     this.status = new Status()
     this.log = new Log()
 
     this.actions = new Actions(this)
+  }
+
+  async init() {
+    await this.actions.on()
+    await this.config.init()
+
+    let status = this.config.get('status')
+
+    status && this.actions[status]()
   }
 }
 

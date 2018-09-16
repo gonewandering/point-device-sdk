@@ -5,4 +5,4 @@ var device = new Device({
   schemes: require('./schemes')
 })
 
-device.actions.on()
+device.init()

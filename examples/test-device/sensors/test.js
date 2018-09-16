@@ -9,7 +9,7 @@ class TestSensor extends Device.Sensor {
           test: true,
           value: Math.random()
         })
-      }, 500)
+      }, 1000)
     })
   }
 }
