@@ -33,6 +33,8 @@ class Device {
     this.log = new Log()
 
     this.actions = new Actions(this)
+
+    this.config.set('availableSchemes', Object.keys(this.schemes))
   }
 
   async init() {
