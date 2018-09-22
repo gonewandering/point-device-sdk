@@ -39,10 +39,8 @@ class Device {
 
   async init() {
     await this.actions.on()
-    await this.config.init()
 
     let status = this.config.get('status')
-
     status && this.actions[status]()
   }
 }
