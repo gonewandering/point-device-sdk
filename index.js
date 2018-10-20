@@ -9,6 +9,7 @@ const Stream = require('./lib/stream')
 const leds = require('./lib/leds')
 const mid = require('./lib/mid')()
 const network = require('./lib/network')
+const files = require('./lib/files')
 
 const exec = require('./hlp/exec')
 const delay = require('./hlp/delay')
@@ -22,6 +23,7 @@ class Device {
     this.leds = leds
     this.exec = exec
     this.delay = delay
+    this.files = files
 
     this.schemes = opts.schemes || {}
     this.sensor = opts.sensor && new opts.sensor()
@@ -45,6 +47,7 @@ class Device {
   }
 }
 
+Device.files = files
 Device.mid = mid
 Device.Sensor = Sensor
 Device.Stream = Stream
