@@ -43,9 +43,10 @@ class Device {
     await this.actions.on()
 
     let sensor = this.config.get('sensor')
+    let frequency = this.config.get('frequency')
 
     if (sensor) {
-      this.sensor = new this.sensors[sensor]()
+      this.sensor = new this.sensors[sensor](frequency)
     }
 
     let status = this.config.get('status')
