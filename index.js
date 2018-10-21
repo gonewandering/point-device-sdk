@@ -49,7 +49,7 @@ class Device {
     if (sensor) {
       this.sensor = new this.sensors[sensor]()
     }
-    
+
     let status = this.config.get('status')
     status && this.actions[status]()
   }
