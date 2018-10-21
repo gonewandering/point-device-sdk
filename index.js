@@ -6,7 +6,6 @@ const Log = require('./lib/log')
 const Sensor = require('./lib/sensor')
 const Stream = require('./lib/stream')
 
-const leds = require('./lib/leds')
 const mid = require('./lib/mid')()
 const network = require('./lib/network')
 const files = require('./lib/files')
@@ -20,7 +19,6 @@ class Device {
 
     this.mid = mid
     this.network = network
-    this.leds = leds
     this.exec = exec
     this.delay = delay
     this.files = files
