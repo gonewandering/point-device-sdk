@@ -25,10 +25,12 @@ class Device {
     this.delay = delay
     this.files = files
 
-    this.schemes = opts.schemes || {}
-    this.sensor = opts.sensor && new opts.sensor()
+    this.schemes = opts.schemes
+    this.sensors = opts.sensors
 
-    this.config = new Config()
+    this.configPath = opts.configPath
+
+    this.config = new Config(this.configPath)
 
     this.command = new Command()
     this.status = new Status()
@@ -42,6 +44,12 @@ class Device {
   async init() {
     await this.actions.on()
 
+    let sensor = this.config.get('sensor')
+
+    if (sensor) {
+      this.sensor = new this.sensors[sensor]()
+    }
+    
     let status = this.config.get('status')
     status && this.actions[status]()
   }
