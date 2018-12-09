@@ -17,7 +17,6 @@ class Device {
   constructor(opts) {
     opts = opts || {}
 
-    this.mid = mid
     this.network = network
     this.exec = exec
     this.delay = delay
@@ -40,6 +39,8 @@ class Device {
   }
 
   async init() {
+    this.mid = this.config.get('mid') || mid()
+
     await this.actions.on()
 
     let sensor = this.config.get('sensor')
@@ -55,7 +56,6 @@ class Device {
 }
 
 Device.files = files
-Device.mid = mid
 Device.Sensor = Sensor
 Device.Stream = Stream
 Device.command = new Command()
