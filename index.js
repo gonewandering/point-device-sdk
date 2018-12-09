@@ -27,20 +27,17 @@ class Device {
     this.sensors = opts.sensors
 
     this.configPath = opts.configPath
-
     this.config = new Config(this.configPath)
 
     this.command = new Command()
     this.status = new Status()
     this.log = new Log()
-
     this.actions = new Actions(this)
 
     this.config.set('availableSchemes', Object.keys(this.schemes))
   }
 
   async init() {
-    this.mid = this.config.get('mid') || mid()
 
     await this.actions.on()
 
