@@ -17,6 +17,7 @@ class Device {
   constructor(opts) {
     opts = opts || {}
 
+    this.mid = opts.mid || mid
     this.network = network
     this.exec = exec
     this.delay = delay
